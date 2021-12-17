@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\SK-A-1595.jpg" />
+    <None Include="wwwroot\img\SK-A-1935.jpg" />
+    <None Include="wwwroot\img\SK-A-2344.jpg" />
+    <None Include="wwwroot\img\SK-A-2351.jpg" />
+    <None Include="wwwroot\img\SK-A-2391.jpg" />
+    <None Include="wwwroot\img\SK-A-2860.jpg" />
+    <None Include="wwwroot\img\SK-A-3066.jpg" />
+    <None Include="wwwroot\img\SK-A-3137.jpg" />
+    <None Include="wwwroot\img\SK-A-3138.jpg" />
+    <None Include="wwwroot\img\SK-A-3262.jpg" />
+    <None Include="wwwroot\img\SK-A-3276.jpg" />
+    <None Include="wwwroot\img\SK-A-3298.jpg" />
+    <None Include="wwwroot\img\SK-A-3307.jpg" />
+    <None Include="wwwroot\img\SK-A-3340.jpg" />
+    <None Include="wwwroot\img\SK-A-3341.jpg" />
+    <None Include="wwwroot\img\SK-A-3477.jpg" />
+    <None Include="wwwroot\img\SK-A-358.jpg" />
+    <None Include="wwwroot\img\SK-A-3934.jpg" />
+    <None Include="wwwroot\img\SK-A-3981.jpg" />
+    <None Include="wwwroot\img\SK-A-3982.jpg" />
+    <None Include="wwwroot\img\SK-A-4019.jpg" />
+    <None Include="wwwroot\img\SK-A-4050.jpg" />
+    <None Include="wwwroot\img\SK-A-4057.jpg" />
+    <None Include="wwwroot\img\SK-A-4096.jpg" />
+    <None Include="wwwroot\img\SK-A-4119.jpg" />
+    <None Include="wwwroot\img\SK-A-4674.jpg" />
+    <None Include="wwwroot\img\SK-A-4691.jpg" />
+    <None Include="wwwroot\img\SK-A-4717.jpg" />
+    <None Include="wwwroot\img\SK-A-4833.jpg" />
+    <None Include="wwwroot\img\SK-A-4885.jpg" />
+    <None Include="wwwroot\img\SK-A-5033.jpg" />
+    <None Include="wwwroot\img\SK-A-91.jpg" />
+    <None Include="wwwroot\img\SK-C-1747.jpg" />
+    <None Include="wwwroot\img\SK-C-1768.jpg" />
+    <None Include="wwwroot\img\SK-C-216.jpg" />
+    <None Include="wwwroot\img\SK-C-251.jpg" />
+    <None Include="wwwroot\img\SK-C-5.jpg" />
+    <None Include="wwwroot\img\SK-C-597.jpg" />
+    <None Include="wwwroot\img\SK-C-6.jpg" />
+    <None Include="wwwroot\img\VanGogh.jpg" />
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+
+</Project>
