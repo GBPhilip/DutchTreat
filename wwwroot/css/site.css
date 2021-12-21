@@ -11,19 +11,36 @@ input[type=submit] {
 label {
     font-size:16px;
 }
-#theForm {
+#the-form {
     background-color: #d0d0d0;
 }
 
-#theForm input[type=submit] {
+#the-form input[type=submit] {
     background-color: green;
     color: white;
 }
 
-ul.productProps {
+ul.product-props {
     font-size: small;
 }
 
-    ul.productProps li {
+    ul.product-props li {
         list-style-type:none;
+    }
+
+    .product-info {
+        border: 1px solid grey;
+        display: inline-block;
+        padding: 8px 2px;
+        margin: 2px;
+        width: 450px;
+        background-color :lightgray;
+        border-radius: 5px;
+    }
+
+    .product-info img {
+        margin: 3px;
+        float: left;
+        border: 1px solid black;
+        max-width: 150px;
     }
