@@ -45,7 +45,6 @@
     <None Include="wwwroot\img\SK-C-597.jpg" />
     <None Include="wwwroot\img\SK-C-6.jpg" />
     <None Include="wwwroot\img\VanGogh.jpg" />
-    <None Include="wwwroot\index.html" />
   </ItemGroup>
 
 </Project>
