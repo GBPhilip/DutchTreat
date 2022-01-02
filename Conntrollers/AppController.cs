@@ -8,7 +8,20 @@ namespace DutchTreat.Controllers
     {
         public IActionResult Index()
         {
-            throw new InvalidProgramException("Bad thinmgs happens to good developers");
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            ViewBag.Title = "Contact Us";
+
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            ViewBag.Title = "About";
+
             return View();
         }
     }
