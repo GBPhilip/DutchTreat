@@ -8,12 +8,17 @@
 <body>
     <header class="container">
         <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-        <h1 class="navbar-brand">Welcome to Dutch Treat</h1>
-            <ul class="navbar-nav ">
-                <li class="navitem"><a class="nav-link" asp-controller="App" asp-action="Index">Home</a></li>
-                <li class="navitem"><a class="nav-link" asp-controller="App" asp-action="Contact">Contact</a></li>
-                <li class="navitem"><a class="nav-link" asp-controller="App" asp-action="About">About</a></li>
-            </ul>
+            <h1 class="navbar-brand">Welcome to Dutch Treat</h1>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#theMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="theMenu" class="navbar-collapse collapse">
+                <ul class="navbar-nav ">
+                    <li class="navitem"><a class="nav-link" asp-controller="App" asp-action="Index">Home</a></li>
+                    <li class="navitem"><a class="nav-link" asp-controller="App" asp-action="Contact">Contact</a></li>
+                    <li class="navitem"><a class="nav-link" asp-controller="App" asp-action="About">About</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <section class="container">
