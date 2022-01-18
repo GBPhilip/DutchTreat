@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DutchContextDb": "Server=(localdb)\\MSSQLLocalDB;Database=DutchTreat;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}

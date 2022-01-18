@@ -1,18 +1,22 @@
-﻿using DutchTreat.Services;
+﻿using DutchTreat.Data;
+using DutchTreat.Services;
 using DutchTreat.ViewModels;
 
 using Microsoft.AspNetCore.Mvc;
 
+using System.Linq;
 
 namespace DutchTreat.Controllers
 {
     public class AppController : Controller
     {
         private readonly IMailService mailService;
+        private readonly DutchContext dutchContext;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, DutchContext dutchContext)
         {
             this.mailService = mailService;
+            this.dutchContext = dutchContext;
         }
 
         public IActionResult Index()
@@ -40,6 +44,12 @@ namespace DutchTreat.Controllers
         }
         public IActionResult About()
         {
+            return View();
+        }
+
+        public IActionResult Shop()
+        {
+            var results = dutchContext.Products.ToList();
             return View();
         }
     }
