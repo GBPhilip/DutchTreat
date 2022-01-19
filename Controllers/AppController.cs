@@ -49,8 +49,10 @@ namespace DutchTreat.Controllers
 
         public IActionResult Shop()
         {
-            var results = dutchContext.Products.ToList();
-            return View();
+            var results = dutchContext.Products
+                .OrderBy(p => p.Category)
+                .ToList();
+            return View(results);
         }
     }
 }
