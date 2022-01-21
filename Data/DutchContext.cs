@@ -3,6 +3,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
+using System;
+
 namespace DutchTreat.Data
 {
     public class DutchContext : DbContext
@@ -20,6 +22,16 @@ namespace DutchTreat.Data
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(config["ConnectionStrings:DutchContextDB"]);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>().HasData(new Order()
+            {
+                Id = 1,
+                OrderDate = DateTime.UtcNow,
+                OrderNumber = "122345"
+            });
         }
     }
 }
