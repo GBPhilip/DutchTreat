@@ -35,7 +35,7 @@ namespace DutchTreat.Controllers
             catch (Exception ex)
             {
                 logger.LogError($"Failed to get products: {ex}");
-                return BadRequest("Failed to get products")
+                return BadRequest("Failed to get products");
             }
 
         }

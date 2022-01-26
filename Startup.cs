@@ -24,7 +24,8 @@ namespace DutchTreat
             services.AddScoped<IDutchRepository, DutchRepository>();
             services.AddTransient<IMailService, NullMailService>();
             services.AddControllersWithViews()
-                .AddRazorRuntimeCompilation();
+                .AddRazorRuntimeCompilation()
+                .AddNewtonsoftJson(cfg => cfg.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
             services.AddRazorPages();
 
         }
