@@ -1,4 +1,6 @@
 ﻿using DutchTreat.Data;
+using DutchTreat.Data.Entities;
+using DutchTreat.ViewModels;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -50,6 +52,39 @@ namespace DutchTreat.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody] OrderViewModel model)
+        {
+            try
+            {
+                var newOrder = new Order()
+                {
+                    OrderDate = model.OrderDate,
+                    OrderNumber = model.OrderNumber,
+                    Id = model.OrderId
+                };
 
+                if (newOrder.OrderDate == DateTime.MinValue)
+                {
+                    newOrder.OrderDate = DateTime.Now;
+                }
+                repository.AddEntity(newOrder);
+                if (repository.SaveAll())
+                {
+                    var viewModel = new OrderViewModel()
+                    {
+                        OrderId = newOrder.Id,
+                        OrderDate = newOrder.OrderDate,
+                        OrderNumber = newOrder.OrderNumber,
+                    };
+                    return Created($"/api/orders/{viewModel.OrderId}", viewModel);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failed to save a new order:{ex}");
+            }
+            return BadRequest("Failed to save new order");
+        }
     }
 }

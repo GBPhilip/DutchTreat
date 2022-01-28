@@ -77,5 +77,10 @@ namespace DutchTreat.Data
                 return null;
             }
         }
+
+        public void AddEntity(object model)
+        {
+            context.Add(model);
+        }
     }
 }
