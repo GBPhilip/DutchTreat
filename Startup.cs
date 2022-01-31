@@ -1,3 +1,5 @@
+using AutoMapper;
+
 using DutchTreat.Data;
 using DutchTreat.Services;
 
@@ -7,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using System.Reflection;
 
 namespace DutchTreat
 {
@@ -21,6 +24,7 @@ namespace DutchTreat
                 cfg.UseSqlServer();
             });
             services.AddTransient<DutchSeeder>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IDutchRepository, DutchRepository>();
             services.AddTransient<IMailService, NullMailService>();
             services.AddControllersWithViews()
