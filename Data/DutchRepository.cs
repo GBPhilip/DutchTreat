@@ -55,11 +55,13 @@ namespace DutchTreat.Data
             return context.SaveChanges() != 0;
         }
 
-        public IEnumerable<Order> GetAllOrders()
+        public IEnumerable<Order> GetAllOrders(bool includeItems)
         {
-            return context.Orders
+            var orders = context.Orders;
+            if (includeItems) return orders
                 .Include(o => o.Items)
                 .ThenInclude(p => p.Product).ToList();
+            return orders;
         }
 
         public Order GetOrderById(int id)
