@@ -1,37 +1,34 @@
-﻿using DutchTreat.Data.Entities;
+﻿using DutchTreat.Controllers.Data.Entities;
+using DutchTreat.Data.Entities;
 
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-using System;
-
 namespace DutchTreat.Data
 {
-    public class DutchContext : DbContext
+    public class DutchContext : IdentityDbContext<StoreUser>
     {
         private readonly IConfiguration config;
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
 
-        public DutchContext(IConfiguration config)
+        public DutchContext(DbContextOptions<DutchContext> options) : base(options)
         {
-            this.config = config;
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(config["ConnectionStrings:DutchContextDB"]);
-        }
 
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Order>().HasData(new Order()
-            {
-                Id = 1,
-                OrderDate = DateTime.UtcNow,
-                OrderNumber = "122345"
-            });
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Product>()
+              .Property(p => p.Price)
+              .HasColumnType("money");
+
+            modelBuilder.Entity<OrderItem>()
+              .Property(o => o.UnitPrice)
+              .HasColumnType("money");
         }
     }
 }
