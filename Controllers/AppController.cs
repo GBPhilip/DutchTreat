@@ -22,6 +22,7 @@ namespace DutchTreat.Controllers
 
         public IActionResult Index()
         {
+            var products = dutchRepository.GetAllProducts();
             return View();
         }
 

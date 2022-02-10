@@ -32,7 +32,7 @@ namespace DutchTreat
             seeder.Seed();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration(AddConfiguration)
                 .ConfigureWebHostDefaults(webBuilder =>

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 
+using DutchTreat.Data;
+
 using DutchTreat.ViewModels;
 
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DutchTreat.Data.Controllers
+namespace DutchTreat.Controllers
 {
     [Route("/api/orders/{orderid}/items")]
     public class OrderItemsController : Controller
