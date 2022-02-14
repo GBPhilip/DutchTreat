@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="wwwroot\img\SK-A-1595.jpg" />
     <None Include="wwwroot\img\SK-A-1935.jpg" />
