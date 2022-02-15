@@ -4,9 +4,9 @@ using System;
 
 namespace DutchTreat.Controllers.Data.Entities
 {
-    //public class StoreUser : IdentityUser
-    //{
-    //    public string FirstName { get; set; }
-    //    public String LastName { get; set; }
-    //}
+    public class StoreUser : IdentityUser
+    {
+        public string FirstName { get; set; }
+        public String LastName { get; set; }
+    }
 }
