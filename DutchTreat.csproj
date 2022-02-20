@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Account\Login.cshtml" />
     <None Include="wwwroot\index.html" />
   </ItemGroup>
   
