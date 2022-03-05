@@ -4,8 +4,13 @@
   },
   "Logging": {
     "LogLevel": {
-      "Default":  "Information",
-      "Microsoft":  "Warning"
+      "Default": "Information",
+      "Microsoft": "Warning"
     }
+  },
+  "Tokens": {
+    "Key": ";lkjhfgdhhsdfhdfhfrthhtrh",
+    "Issuer": "http://localhost:8888",
+    "Audience": "http://localhost:8888",
   }
 }

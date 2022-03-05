@@ -11,8 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 using System.Reflection;
+using System.Text;
 
 namespace DutchTreat
 {
@@ -29,10 +31,22 @@ namespace DutchTreat
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<StoreUser, IdentityRole>(cfg =>
-            { 
+            {
                 cfg.User.RequireUniqueEmail = true;
             })
                 .AddEntityFrameworkStores<DutchContext>();
+            services.AddAuthentication()
+                .AddCookie()
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidIssuer = config["Tokens:Issuer"],
+                        ValidAudience = config["Tokens:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Tokens:Key"]))
+                    };
+                });
+
              
             services.AddDbContext<DutchContext>(cfg =>
             {
