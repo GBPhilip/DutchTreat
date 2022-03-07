@@ -73,14 +73,14 @@ namespace DutchTreat.Data
             return userOrders.ToList();
         }
 
-        public Order GetOrderById(int id)
+        public Order GetOrderById(string username, int id)
         {
             try
             {
                 return context.Orders
                     .Include(o => o.Items).
                     ThenInclude(p => p.Product)
-                    .FirstOrDefault(o => o.Id == id);
+                    .FirstOrDefault(o => o.Id == id && o.User.UserName == username);
             }
             catch (Exception ex)
             {
