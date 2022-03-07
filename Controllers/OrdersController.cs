@@ -37,7 +37,8 @@ namespace DutchTreat.Controllers
         {
             try
             {
-                var result = repository.GetAllOrders(includeItems);
+                var username = User.Identity.Name;
+                var result = repository.GetAllOrdersByUser(username,includeItems);
                 return Ok(mapper.Map<IEnumerable<OrderViewModel>>(result));
             }
             catch (Exception ex)

@@ -60,8 +60,17 @@ namespace DutchTreat.Data
             var orders = context.Orders;
             if (includeItems) return orders
                 .Include(o => o.Items)
-                .ThenInclude(p => p.Product).ToList();
-            return orders;
+                .ThenInclude(p => p.Product); 
+            return orders.ToList(); ;
+        }
+
+        public IEnumerable<Order> GetAllOrdersByUser(string username, bool includeItems)
+        {
+            var userOrders = context.Orders.Where(x => x.User.UserName == username);
+            if (includeItems) return userOrders
+                .Include(o => o.Items)
+                .ThenInclude(p => p.Product);
+            return userOrders.ToList();
         }
 
         public Order GetOrderById(int id)
