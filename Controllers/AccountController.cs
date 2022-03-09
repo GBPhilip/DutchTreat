@@ -1,4 +1,4 @@
-﻿using DutchTreat.Controllers.Data.Entities;
+﻿using DutchTreat.Data.Entities;
 using DutchTreat.ViewModels;
 
 using Microsoft.AspNetCore.Identity;

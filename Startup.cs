@@ -1,7 +1,7 @@
 using AutoMapper;
 
-using DutchTreat.Controllers.Data.Entities;
 using DutchTreat.Data;
+using DutchTreat.Data.Entities;
 using DutchTreat.Services;
 
 using Microsoft.AspNetCore.Builder;

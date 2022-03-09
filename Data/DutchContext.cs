@@ -1,5 +1,4 @@
-﻿using DutchTreat.Controllers.Data.Entities;
-using DutchTreat.Data.Entities;
+﻿using DutchTreat.Data.Entities;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
