@@ -1,25 +1,31 @@
 ﻿@model IEnumerable<Product>
 @section Scripts {
-     <script src="~/ts/shopper.js"></script>
-     <script src="~/ts/main.js"></script>
+    <script scr="~/client/polyfills.a151bed753c7da9d.js"></script>
+    <script scr="~/client/runtime.01fec06f14767966.js"></script>
+    <script scr="~/client/main.0d5c467b2a471d9f.js" asp-append-version="true"></script>
 }
-<h1>Shop</h1>
-<p>Count: @Model.Count()</p>
-<div class="row">
-    @foreach (var p in Model)
-    {
+@section head {
+<link href="~/client/styles.ef46db3751d8e999.css" rel="stylesheet" />
+}
+<the-shop></the-shop>
+   @*
+        <h1>Shop</h1>
+        <p>Count: @Model.Count()</p>
+        <div class="row">
+        @foreach (var p in Model)
+        {
         <div class="col-md-3">
-            <div class="border bg-light rounded p-1">
-                <img src="~/img/@(p.ArtId).jpg" class="img-fluid" alt="@(p.ArtId)" />
-                <h3>@p.Category - @p.Size</h3>
-                <ul>
-                    <li>Price: $@p.Price</li>
-                    <li>Artist: @p.Artist</li>
-                    <li>Title: @p.Title</li>
-                    <li>Description: @p.ArtDescription</li>
-                </ul>
-                <button id="buyButton" class="btn btn-success">Buy</button>
-            </div>
+        <div class="border bg-light rounded p-1">
+        <img src="~/img/@(p.ArtId).jpg" class="img-fluid" alt="@(p.ArtId)" />
+        <h3>@p.Category - @p.Size</h3>
+        <ul>
+        <li>Price: $@p.Price</li>
+        <li>Artist: @p.Artist</li>
+        <li>Title: @p.Title</li>
+        <li>Description: @p.ArtDescription</li>
+        </ul>
+        <button id="buyButton" class="btn btn-success">Buy</button>
         </div>
-    }
-</div>
+        </div>
+        }
+        </div>*@

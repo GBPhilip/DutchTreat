@@ -52,7 +52,7 @@ namespace DutchTreat.Controllers
                 {
                     if (Request.Query.Keys.Contains("ReturnUrl"))
                     {
-                        return RedirectToAction(Request.Query["ReturnUrl"].First());
+                        return Redirect(Request.Query["ReturnUrl"].First());
                     }
                     else
                     {

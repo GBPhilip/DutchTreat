@@ -74,4 +74,8 @@
     <TypeScriptCompile Include="wwwroot\ts\shopper.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="client\" />
+  </ItemGroup>
+
 </Project>
