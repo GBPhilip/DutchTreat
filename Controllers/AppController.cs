@@ -54,7 +54,7 @@ namespace DutchTreat.Controllers
         {
             var results = dutchRepository.GetAllProducts()
                 .OrderBy(p => p.Category);
-            return View(results);
+            return View(results);        
         }
     }
 }
