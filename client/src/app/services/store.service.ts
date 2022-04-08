@@ -23,16 +23,22 @@ export class Store {
             }))
     }
     addToOrder(product: Product) {
-        const newItem = new OrderItem();
-        newItem.productId = product.id;
-        newItem.productArtId = product.artId;
-        newItem.productArtist = product.artist;
-        newItem.productCategory = product.category;
-        newItem.productSize = product.size;
-        newItem.productTitle = product.title;
-        newItem.unitPrice = product.price;
-        newItem.quantity = 1;
-
-        this.order.items.push(newItem)
+        let item: OrderItem;
+        item = this.order.items.find(x => x.productArtId == product.artId);
+        if (item) {
+            item.quantity++;
+        }
+        else {
+            item = new OrderItem();
+            item.productId = product.id;
+            item.productArtId = product.artId;
+            item.productArtist = product.artist;
+            item.productCategory = product.category;
+            item.productSize = product.size;
+            item.productTitle = product.title;
+            item.unitPrice = product.price;
+            item.quantity = 1;
+            this.order.items.push(item)
+        }
     }
 }
